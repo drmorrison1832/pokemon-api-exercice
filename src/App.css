@@ -15,16 +15,13 @@ body {
 
 header {
   display: flex;
-  padding: 0.5em 1em;
+  padding: 0.5rem 1rem;
   justify-content: space-between;
   align-self: stretch;
-
-  /* min-width: 100dvw; */
-  min-width: 90dvw;
-  border-bottom: 1px solid white;
+  /* border-bottom: 1px solid white; */
 }
 header img {
-  max-height: 3em;
+  max-height: 3rem;
 }
 
 nav {
@@ -37,17 +34,19 @@ nav {
 main {
   display: flex;
   flex-direction: column;
-  min-width: 90dvw;
+  min-width: 100dvw;
+  min-height: calc(100dvh - 4rem - 7px);
 
-  /* justify-content: center; */
-  /* background: #000; */
+  justify-content: center;
+
   align-self: stretch;
 
   /* border: 1px solid white; */
 }
 
 .salut {
-  margin-top: 100%;
+  /* margin-top: 25%;
+  margin-bottom: 25%; */
 }
 
 .cards {
