@@ -9,11 +9,10 @@ const Types = () => {
 
   useEffect(() => {
     async function getData() {
-      console.log("Fetching basic data...");
+      console.log("Fetching types...");
 
       try {
         const response = await axios.get("https://pokeapi.co/api/v2/type");
-        console.log("Data fetched");
 
         setData(response.data.results);
         setIsLoading(false);

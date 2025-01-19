@@ -4,17 +4,16 @@ import { useParams } from "react-router-dom";
 import Cards from "../components/Cards";
 useParams;
 
-const Type = ({ data, setData }) => {
+const Type = () => {
+  const [data, setData] = useState();
   const { type } = useParams();
 
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  console.log("Pokémon type is", type);
-
   useEffect(() => {
     async function getData() {
-      console.log("Fetching Pokemons of this type...");
+      console.log("Fetching Pokemons of type", type + "...");
 
       try {
         let response = await axios.get(

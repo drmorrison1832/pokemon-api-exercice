@@ -1,11 +1,10 @@
 import { useParams } from "react-router-dom";
 import Card from "../components/Card";
 import TypesList from "../components/TypesList";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const Item = ({ data }) => {
+const Item = () => {
   const { name } = useParams();
 
   const [pokemon, setPokemon] = useState();
@@ -14,6 +13,7 @@ const Item = ({ data }) => {
 
   useEffect(() => {
     async function getData() {
+      console.log("Fetching", name + "...");
       try {
         const response = await axios.get(
           `https://pokeapi.co/api/v2/pokemon/${name}`

@@ -53,23 +53,27 @@ main {
 }
 
 .cards {
+  margin: 3rem 3rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 3em;
 }
 
 .card {
   background: #f4ebd3;
-  width: 7em;
-  height: 10em;
-  margin: 1em;
+  width: 9em;
+  height: 12em;
   border-radius: 5px;
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 1em;
-  justify-content: center;
-  padding: 1em;
+
+  -webkit-box-shadow: 0px 0px 40px -20px #f4ebd3;
+  box-shadow: 0px 0px 40px -20px #f4ebd3;
 }
 
 .pokemon-name {
@@ -84,7 +88,7 @@ main {
 }
 
 .pokemon-image {
-  min-width: 100%;
+  min-width: 70%;
   display: flex;
   overflow: hidden;
 }
