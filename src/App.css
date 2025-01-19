@@ -1,7 +1,9 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100dvw;
+  /* max-width: 1280px; */
+  margin: 0 0;
   text-align: center;
+  /* border: 1px solid white; */
 }
 
 body {
@@ -34,14 +36,15 @@ nav {
 main {
   display: flex;
   flex-direction: column;
-  min-width: 100dvw;
-  min-height: calc(100dvh - 4rem - 7px);
+
+  min-height: calc(100dvh - 4rem - 10px);
 
   justify-content: center;
 
   align-self: stretch;
 
-  /* border: 1px solid white; */
+  border: 1px solid orange;
+  border-radius: 10px;
 }
 
 .salut {
