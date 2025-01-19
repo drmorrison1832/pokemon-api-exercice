@@ -27,8 +27,10 @@
   min-height: calc(100dvh - 4rem - 10px);
   justify-content: center;
   align-self: stretch;
-  border: 1px solid orange;
+  border: 2px solid orange;
   border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 40px -30px #f4ebd3;
+  box-shadow: 0px 0px 40px -30px #f4ebd3;
 }
 
 .salut,
@@ -41,7 +43,7 @@
 }
 
 .cards {
-  margin: 3rem 3rem;
+  margin: 2rem 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -59,13 +61,15 @@
   justify-content: center;
   align-items: center;
   gap: 1em;
+  transition: 200ms;
   -webkit-box-shadow: 0px 0px 40px -25px #f4ebd3;
   box-shadow: 0px 0px 40px -25px #f4ebd3;
 }
 
-.cards .card:hover {
+.card:hover {
   -webkit-box-shadow: 0px 0px 40px -15px #f4ebd3;
   box-shadow: 0px 0px 40px -15px #f4ebd3;
+  transition: 200ms;
 }
 
 .pokemon-name {
@@ -112,6 +116,7 @@
   color: red;
   padding: 0.5em;
   border-radius: 6px;
+  transition: 100ms;
   -webkit-box-shadow: 0px 0px 40px -15px #f4ebd3;
   box-shadow: 0px 0px 40px -15px #f4ebd3;
 }
@@ -123,12 +128,14 @@
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 40px -10px #f4ebd3;
   box-shadow: 0px 0px 40px -10px #f4ebd3;
+  transition: 200ms;
 }
 .type-item:hover a {
   color: rgb(225.8, 201.9090909091, 138.2);
 }
 
 .types {
+  display: flex;
   align-self: center;
   margin: 5dvw;
   gap: 2em;

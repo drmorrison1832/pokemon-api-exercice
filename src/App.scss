@@ -35,8 +35,9 @@
   min-height: calc(100dvh - 4rem - 10px);
   justify-content: center;
   align-self: stretch;
-  border: 1px solid orange;
+  border: 2px solid orange;
   border-radius: 10px;
+  @include shadow(-30px);
 }
 
 .salut,
@@ -49,7 +50,7 @@
 }
 
 .cards {
-  margin: 3rem 3rem;
+  margin: 2rem 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -62,19 +63,17 @@
   width: 9em;
   height: 12em;
   border-radius: 5px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1em;
+  transition: 200ms;
   @include shadow;
 }
-
-.cards {
-  .card:hover {
-    @include shadow(-15px);
-  }
+.card:hover {
+  @include shadow(-15px);
+  transition: 200ms;
 }
 
 .pokemon-name {
@@ -120,6 +119,7 @@
   color: red;
   padding: 0.5em;
   border-radius: 6px;
+  transition: 100ms;
   @include shadow(-15px);
   a {
     color: #f4ebd3;
@@ -128,6 +128,7 @@
     border-color: color.scale(#f4ebd3, $lightness: -20%);
     cursor: pointer;
     @include shadow(-10px);
+    transition: 200ms;
     a {
       color: color.scale(#f4ebd3, $lightness: -20%);
     }
@@ -135,6 +136,7 @@
 }
 
 .types {
+  display: flex;
   align-self: center;
   margin: 5dvw;
   gap: 2em;
