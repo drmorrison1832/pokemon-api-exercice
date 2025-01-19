@@ -30,7 +30,7 @@ const Item = () => {
         for (let type of response.data.types) {
           result.types.push(type.type.name);
         }
-
+        console.log("Fetched");
         setPokemon(result);
         setIsLoading(false);
       } catch (error) {
@@ -42,14 +42,13 @@ const Item = () => {
   }, [name]);
 
   if (error) {
-    return <div>Something went wrong.</div>;
+    return <div className="error">Something went wrong</div>;
   }
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
   return (
     <div>
-      <h2>Pokemon</h2>
       <div className="show-item">
         <Card pokemon={pokemon} />
         <TypesList types={pokemon.types} />

@@ -5,7 +5,11 @@ const Cards = ({ data }) => {
   return (
     <div className="cards">
       {data.map((pokemon) => {
-        return <Card pokemon={pokemon} key={pokemon.id} />;
+        return (
+          <Link to={"/pokemons/" + pokemon.name} key={pokemon.id}>
+            <Card pokemon={pokemon} />
+          </Link>
+        );
       })}
     </div>
   );

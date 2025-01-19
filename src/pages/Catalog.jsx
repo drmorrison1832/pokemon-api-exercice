@@ -28,11 +28,12 @@ const Catalog = () => {
             result.types.push(type.type.name);
           }
         }
-
+        console.log("Fetched");
         setData(response.data.results);
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error.message);
+        setIsLoading(false);
         setError(true);
       }
     }
@@ -40,19 +41,14 @@ const Catalog = () => {
   }, []);
 
   if (error) {
-    return <div>Something went wrong.</div>;
+    return <div className="error">Something went wrong</div>;
   }
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
-  return (
-    <div className="galery">
-      <h2>Pokemons</h2>
-      <Cards data={data} />
-    </div>
-  );
+  return <Cards data={data} />;
 };
 
 export default Catalog;

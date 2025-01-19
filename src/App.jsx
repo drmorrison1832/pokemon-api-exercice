@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <main>
+      <section className="main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pokemons" element={<Catalog />} />
@@ -25,7 +25,7 @@ function App() {
           <Route path="/types/" element={<Types />} />
           <Route path="/types/:type" element={<Type />} />
         </Routes>
-      </main>
+      </section>
     </Router>
   );
 }
