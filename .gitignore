@@ -26,4 +26,6 @@ dist-ssr
 # Etc.
 .env
 
-
+# Sass
+App.css.map
+App.scss

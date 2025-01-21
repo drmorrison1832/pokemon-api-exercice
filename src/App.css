@@ -1,6 +1,13 @@
+body {
+  height: 100dvh;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
 #root {
-  width: 100dvw;
-  margin: 0 0;
+  width: 100%;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -22,11 +29,11 @@
 }
 
 .main {
+  height: 100%;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  min-height: calc(100dvh - 4rem - 10px);
   justify-content: center;
-  align-self: stretch;
   border: 2px solid orange;
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 40px -30px #f4ebd3;
