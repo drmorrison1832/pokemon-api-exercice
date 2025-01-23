@@ -57,8 +57,7 @@ body {
   @include shadow(-30px);
 }
 
-.salut,
-.loading {
+.salut {
   color: #f4ebd3;
 }
 
@@ -160,4 +159,20 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.loader {
+  margin: 0 auto;
+  color: #f4ebd3;
+  width: fit-content;
+  clip-path: inset(0 2ch 0 0);
+  animation: l4 1s steps(4) infinite;
+}
+.loader:before {
+  content: "Loading . . . ";
+}
+@keyframes l4 {
+  to {
+    clip-path: inset(0 -1ch 0 0);
+  }
 }

@@ -45,7 +45,7 @@ const Catalog = () => {
   }
 
   if (isLoading) {
-    return <div className="loading">Loading...</div>;
+    return <div className="loader"></div>;
   }
 
   return <Cards data={data} />;

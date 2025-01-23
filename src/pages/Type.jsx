@@ -54,7 +54,7 @@ const Type = () => {
     return <div className="error">Something went wrong</div>;
   }
   if (isLoading) {
-    return <div className="loading">Loading...</div>;
+    return <div className="loader"></div>;
   }
   return (
     <div className="galery">
