@@ -33,6 +33,7 @@ const Type = () => {
         }
 
         console.log("Fetched");
+
         setData(pokemons);
         setIsLoading(false);
       } catch (error) {
