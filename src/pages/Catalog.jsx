@@ -15,21 +15,17 @@ const Catalog = () => {
       try {
         const response = await axios.get("https://pokeapi.co/api/v2/pokemon");
 
-        for (let result of response.data.results) {
-          const response = await axios.get(result.url);
-          result.id = response.data.id;
-          result.image =
+        let pokemons = response.data.results;
+        for (let pokemon of pokemons) {
+          pokemon.id = pokemon.url.split("/")[6];
+          pokemon.image =
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
-            result.id +
+            pokemon.id +
             ".png";
-
-          result.types = [];
-          for (let type of response.data.types) {
-            result.types.push(type.type.name);
-          }
         }
+
         console.log("Fetched");
-        setData(response.data.results);
+        setData(pokemons);
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error.message);
@@ -40,14 +36,12 @@ const Catalog = () => {
     getData();
   }, []);
 
-  if (error) {
-    return <div className="error">Something went wrong</div>;
-  }
-
   if (isLoading) {
     return <div className="loader"></div>;
   }
-
+  if (error) {
+    return <div className="error">Something went wrong</div>;
+  }
   return <Cards data={data} />;
 };
 

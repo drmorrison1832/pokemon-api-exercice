@@ -5,9 +5,8 @@ import Cards from "../components/Cards";
 useParams;
 
 const Type = () => {
-  const [data, setData] = useState();
   const { type } = useParams();
-
+  const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -26,18 +25,13 @@ const Type = () => {
         }
 
         for (let pokemon of pokemons) {
-          const response = await axios.get(pokemon.url);
-          pokemon.id = response.data.id;
+          pokemon.id = pokemon.url.split("/")[6];
           pokemon.image =
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
-            response.data.id +
+            pokemon.id +
             ".png";
-          pokemon.types = [];
-
-          for (let type of response.data.types) {
-            pokemon.types.push(type.type.name);
-          }
         }
+
         console.log("Fetched");
         setData(pokemons);
         setIsLoading(false);
@@ -50,11 +44,11 @@ const Type = () => {
     getData();
   }, [setData, type]);
 
-  if (error) {
-    return <div className="error">Something went wrong</div>;
-  }
   if (isLoading) {
     return <div className="loader"></div>;
+  }
+  if (error) {
+    return <div className="error">Something went wrong</div>;
   }
   return (
     <div className="galery">

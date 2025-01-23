@@ -41,11 +41,11 @@ const Item = () => {
     getData();
   }, [name]);
 
-  if (error) {
-    return <div className="error">Something went wrong</div>;
-  }
   if (isLoading) {
     return <div className="loader"></div>;
+  }
+  if (error) {
+    return <div className="error">Something went wrong</div>;
   }
   return (
     <div>
