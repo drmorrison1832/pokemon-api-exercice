@@ -7,7 +7,7 @@
 
 body {
   height: 100dvh;
-  background: #000;
+
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -41,15 +41,17 @@ body {
   max-height: 3rem;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+}
+
 .main {
-  height: 100%;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  // min-height: calc(100dvh - 4rem - 10px);
-  // height: 100dvh;
   justify-content: center;
-  // align-self: stretch;
   border: 2px solid orange;
   border-radius: 10px;
   @include shadow(-30px);
